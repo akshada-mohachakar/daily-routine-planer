@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productivity Dashboard</title>
+    <link rel="stylesheet" href="planer.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="navbar">
+          <li><a href="#home">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="servics.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="home" class="hero-section">
+      <div class="hero-content">
+        <h1>Welcome to Your Productivity Dashboard</h1>
+        <p>Stay organized, track your goals, and boost your productivity.</p>
+      </div>
+    </section>
+
+    <main>
+      <section id="daily-routine" class="section">
+        <h2>Daily Routine</h2>
+        <p>Plan your day with a structured routine.</p>
+        <ul id="routine-list"></ul>
+        <input
+          type="text"
+          id="routine-input"
+          placeholder="Add new routine task" />
+        <button onclick="addRoutineTask()">Add Task</button>
+        <button class="erase-button" onclick="eraseRoutineTasks()">
+          Erase All
+        </button>
+      </section>
+
+      <section id="water-reminders" class="section">
+        <h2>Water Reminder</h2>
+        <p>Stay hydrated by drinking water regularly.</p>
+        <p>Drink water every <span id="interval">1</span> hour(s)</p>
+        <button onclick="startWaterReminder()">Start Reminder</button>
+        <button class="erase-button" onclick="resetWaterReminder()">
+          Erase
+        </button>
+        <input type="number" id="water-interval-input" value="1" min="1" />
+        Hour(s)
+      </section>
+
+      <section id="todo-list" class="section">
+        <h2>To-Do List</h2>
+        <p>Keep track of your tasks and get things done.</p>
+        <ul id="todo-list-items"></ul>
+        <input type="text" id="todo-input" placeholder="Add new to-do item" />
+        <button onclick="addTodoItem()">Add To-Do</button>
+        <button class="erase-button" onclick="eraseTodoItems()">
+          Erase All
+        </button>
+      </section>
+
+      <section id="notes" class="section">
+        <h2>Notes</h2>
+        <p>Jot down important notes and ideas.</p>
+        <textarea
+          id="notes-textarea"
+          placeholder="Write your notes here..."></textarea>
+        <button class="erase-button" onclick="eraseNotes()">Erase All</button>
+      </section>
+
+      <section id="ideas" class="section">
+        <h2>Ideas</h2>
+        <p>Capture your creative ideas and plans.</p>
+        <textarea
+          id="ideas-textarea"
+          placeholder="Write down your best plans here..."></textarea>
+      </section>
+
+      <section id="goal-tracker" class="section">
+        <h2>Goal Tracker</h2>
+        <p>Set and track your personal and professional goals.</p>
+        <div id="goal-list"></div>
+        <input type="text" id="goal-input" placeholder="Add a new goal" />
+        <button onclick="addGoal()">Add Goal</button>
+        <button class="erase-button" onclick="eraseGoals()">Erase All</button>
+      </section>
+
+      <section id="upcoming-events" class="section">
+        <h2>Upcoming Events</h2>
+        <p>Stay on top of your schedule with upcoming events.</p>
+        <ul id="events-list"></ul>
+        <input type="text" id="event-input" placeholder="Add a new event" />
+        <button onclick="addEvent()">Add Event</button>
+        <button class="erase-button" onclick="eraseEvents()">Erase All</button>
+      </section>
+
+      <section id="personal-development" class="section">
+        <h2>Personal Development</h2>
+        <p>Track your personal growth and development activities.</p>
+        <ul id="development-list"></ul>
+        <input
+          type="text"
+          id="development-input"
+          placeholder="Add a new activity" />
+        <button onclick="addDevelopmentActivity()">Add Activity</button>
+        <button class="erase-button" onclick="eraseDevelopmentActivities()">
+          Erase All
+        </button>
+      </section>
+
+      <section id="data-management" class="section">
+        <h2>Data Management</h2>
+        <p>Save, load, and view your data.</p>
+        <button onclick="saveData()">Save Data</button>
+        <button onclick="loadData()">Load Data</button>
+        <button onclick="viewSavedData()">View Saved Data</button>
+      </section>
+    </main>
+
+    <div id="data-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button" onclick="closeModal()">&times;</span>
+        <h2>Saved Data</h2>
+        <div id="modal-body"></div>
+      </div>
+    </div>
+
+    <script src="planer.js"></script>
+  </body>
+</html>
